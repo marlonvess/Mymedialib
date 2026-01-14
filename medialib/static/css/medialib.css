@@ -1,11 +1,17 @@
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+ font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+main.container {
+    flex: 1; 
+}
 .page-header {
     background: linear-gradient(135deg, #86134d, #5a0c33);
     margin-top: 0;
@@ -118,4 +124,14 @@ button.top-menu {
     bottom: 0;
     width: 100%;
     margin-top: 40px;
+}
+
+.page-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.page-footer a {
+    color: #ffcad4;
+    text-decoration: none;
 }
