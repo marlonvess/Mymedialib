@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.utils import timezone
 from .models import MediaItem
 from .forms import MediaItemForm
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -15,6 +16,7 @@ def post_detail(request, pk):
     media_item = get_object_or_404(MediaItem, pk=pk)
     return render(request, 'medialib/post_detail.html', {'media_item': media_item})
 
+@login_required
 def post_edit(request, pk):
     media_item = get_object_or_404(MediaItem, pk=pk)
     if request.method == "POST":
@@ -28,6 +30,7 @@ def post_edit(request, pk):
         form = MediaItemForm(instance=media_item)
     return render(request, 'medialib/post_edit.html', {'form': form})
 
+@login_required
 def post_new(request):
     if request.method == "POST":
         form = MediaItemForm(request.POST)

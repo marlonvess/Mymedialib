@@ -98,3 +98,13 @@ body {
 .save:hover {
     background-color: #5a0c33;
 }
+
+button.top-menu {
+    background-color: transparent; 
+    border: none;                  
+    font-family: inherit;
+    font-size: 1.5rem;             
+    line-height: inherit;
+    cursor: pointer;
+    padding: 0;                   
+}
