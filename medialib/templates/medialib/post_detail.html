@@ -1,0 +1,13 @@
+{% extends 'medialib/base.html' %}
+
+{% block content %}
+    <article class="post">
+        {% if post.post_date %}
+            <time class="date">
+                {{ post.post_date }}
+            </time>
+        {% endif %}
+        <h2>{{ post.titulo }}</h2>
+           <p>{{ post.comment|linebreaksbr }}</p>
+    </article>
+{% endblock %}

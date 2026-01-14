@@ -13,23 +13,13 @@
         <h1><a href="/">MyMediaLib</a></h1>
     </div>
 </header>
-<main class="container">
-     <div class="row">
-         <div class="col">
+ <main class="container">
+        <div class="row">
+            <div class="col">
             {% block content %}
-{% for media_item in media_items %}
-    <article class="post">
-
-        <h2><a href="{% url 'medialib:post_detail' pk=media_item.pk %}">{{ media_item.titulo }}</a></h2>
-        <p>By: {{ media_item.origin }} | Type: {{ media_item.get_media_type_display }} | Status: {{ media_item.get_status_display }} | Rank: {{ media_item.rank }}/10</p>
-        <p>{{ media_item.comment|linebreaksbr }}</p>
-        <time class="date">Published: {{ media_item.post_date }}</time>
-
-    </article>
-{% endfor %}
-{% endblock %}
-</div>
-</div>
-</main>
+            {% endblock %}
+            </div>
+        </div>
+    </main>
 </body>
 </html>
