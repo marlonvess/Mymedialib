@@ -1,0 +1,13 @@
+
+<header>
+    <h1><a href="/">MyMediaLib</a></h1>
+</header>
+
+{% for media_item in media_items %}
+    <article>
+        
+        <h2><a href="">{{ media_item.titulo }}</a></h2>
+        <p>{{ media_item.comment|linebreaksbr }}</p>
+        <time>published: {{ media_item.post_date }}</time>
+    </article>
+{% endfor %}
