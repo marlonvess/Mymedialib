@@ -42,3 +42,10 @@ def post_new(request):
     else:
         form = MediaItemForm()
     return render(request, 'medialib/post_edit.html', {'form': form})
+
+@login_required
+def post_remove(request, pk):
+    media_items = get_object_or_404(MediaItem, pk=pk)
+    if request.method=='POST':
+        media_items.delete()
+    return redirect('medialib:post_list')
